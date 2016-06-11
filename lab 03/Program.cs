@@ -6,10 +6,37 @@ using System.Threading.Tasks;
 
 namespace lab_03
 {
-    class Program
+    /**
+   * This class is the "driver" class for our Program
+   * 
+   * @class Program
+   */
+    public class Program
     {
+        /**
+       * the main method for our driver class Program
+       * 
+       * @method Main
+       * @param {sting[]} args
+       * @returns {void}
+       */
         static void Main(string[] args)
         {
-        }
-    }
-}
+            Deck deck = new Deck(); // create a deck of cards
+            deck.Display(); // display the initial state of the deck
+
+            deck.Shuffle(); // shuffle the deck
+            deck.Display(); // display the deck after shuffling
+
+            Card cardDealt = deck.Deal();
+            Console.WriteLine("Card Delt: {0} of {1}", cardDealt.Face, cardDealt.Suit);
+            Console.WriteLine();
+            deck.Display();
+
+            cardDealt = deck.Deal();
+            Console.WriteLine("Card Delt: {0} of {1}", cardDealt.Face, cardDealt.Suit);
+            Console.WriteLine();
+            deck.Display();
+        }// end main
+    }// end program
+}// dend namespace
